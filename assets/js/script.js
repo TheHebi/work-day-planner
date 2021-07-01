@@ -38,7 +38,7 @@ function save() {
 function storedText(){
     $(".time-block").each(function(){
         var thisId = $(this).attr("id")
-        $("#" + thisId + " textarea").text.localStorage.getItem(thisId)
+        $("#" + thisId + " textarea").text(localStorage.getItem(thisId))
     })
 }
 storedText()
