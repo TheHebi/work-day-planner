@@ -6,6 +6,8 @@
 
 ### The purpose of this project is to create a work day planner that tracks standard working hours from 0900 to 1700. The background of the text area changes color based on the time of day. If the row is tied to the current time it will be green, if its tied to a time already past it will be gray, and if its tied to a future time it will be green.
 
+![example](./assets/images/example.png)
+
 ### You can type into the text area in the middle of each row to make notes about what you need to do in specific hour blocks of the workday
 
 ![input text](./assets/images/input-text.png)

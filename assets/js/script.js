@@ -9,7 +9,7 @@
 var currentTime = function () {
   $("#currentDay").text(moment().format("dddd MMMM Do, YYYY HHmm:ss"));
 };
-// updates time text every minute
+// updates time text every second
 setInterval(currentTime, 1000);
 // TODO: change block colors based on current time (if/elseif/else)
 function blockColor() {
