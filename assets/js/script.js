@@ -18,22 +18,32 @@ function blockColor() {
     var timeStamp = parseInt(moment().format("HH"));
     if (block < timeStamp) {
       $(this).addClass("past");
-    }else if(block = timeStamp){
-        $(this).addClass("present")
-    }else{
-        $(this).addClass("future")
+    } else if ((block = timeStamp)) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
     }
   });
 }
 blockColor();
 // runs function to update colors every minute
-setInterval(blockColor, 60000)
+setInterval(blockColor, 60000);
 // TODO: save input to local storage
-function save(){
-
+function save() {
+  var hour = $(this).parent().attr("id");
+  console.log(hour);
+  localStorage.setItem(hour, $("#" + hour + " textarea").val())
 }
+// TODO: set blocks from local storage
+function storedText(){
+    $(".time-block").each(function(){
+        var thisId = $(this).attr("id")
+        $("#" + thisId + " textarea").text.localStorage.getItem(thisId)
+    })
+}
+storedText()
 // TODO: click event listener for save btn
-$("saveBtn").on("click", save)
+$(".saveBtn").on("click", save);
 
 console.log($(".time-block").attr("id"));
 console.log(parseInt(moment().format("HH")));
