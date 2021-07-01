@@ -7,21 +7,23 @@
 
 // set #currentDay to current time with momentjs
 var currentTime = function () {
-  $("#currentDay").text(moment().format("dddd MMMM do, YYYY HHmm:ss"));
+  $("#currentDay").text(moment().format("dddd MMMM Do, YYYY HHmm:ss"));
 };
 // updates time text every minute
 setInterval(currentTime, 1000);
 // TODO: change block colors based on current time (if/elseif/else)
 function blockColor() {
   $(".time-block").each(function () {
-    var block = $(".time-block").attr("id");
+    var block = $(this).attr("id");
+    console.log(block)
     var timeStamp = parseInt(moment().format("HH"));
+    console.log(timeStamp)
     if (block < timeStamp) {
       $(this).addClass("past");
-    } else if ((block = timeStamp)) {
-      $(this).addClass("present");
-    } else {
+    } else if ((block > timeStamp)) {
       $(this).addClass("future");
+    } else {
+      $(this).addClass("present");
     }
   });
 }
